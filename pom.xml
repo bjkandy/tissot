@@ -4,7 +4,6 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -12,7 +11,7 @@
     <relativePath />
   </parent>
 
-  <groupId>com.kandy.smart</groupId>
+  <groupId>com.kandy.tissot</groupId>
   <artifactId>tissot</artifactId>
   <version>1.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
@@ -21,10 +20,14 @@
   <url>http://www.example.com</url>
 
   <modules>
-      <module>tissot-core</module>
-      <module>tissot-utils</module>
+    <module>tissot-core</module>
+    <module>tissot-utils</module>
     <module>tissot-web</module>
     <module>tissot-commons-datasource</module>
+    <module>tissot-dubbo</module>
+    <module>tissot-dubbo-client</module>
+    <module>tissot-dubbo-service</module>
+      <module>tissot-dal</module>
   </modules>
 
   <properties>
@@ -239,14 +242,14 @@
 
   <distributionManagement>
     <repository>
-      <id>releases</id>
+      <id>h-releases</id>
       <name>SUDAIBEAR Release Repository</name>
-      <url>http://mvn.iqianjindai.com/nexus/content/repositories/releases/</url>
+      <url>http://101.200.161.103:8082/nexus/content/repositories/releases/</url>
     </repository>
     <snapshotRepository>
-      <id>snapshots</id>
+      <id>h-snapshots</id>
       <name>SUDAIBEAR Snapshot Repository</name>
-      <url>http://mvn.iqianjindai.com/nexus/content/repositories/snapshots/</url>
+      <url>http://101.200.161.103:8082/nexus/content/repositories/snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
 </project>
