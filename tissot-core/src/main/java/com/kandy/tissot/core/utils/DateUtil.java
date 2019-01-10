@@ -206,12 +206,63 @@ public class DateUtil {
 	public static Date getDateAfter(Date date,Integer day){
 		Calendar calendar = new GregorianCalendar();
 		calendar.setTime(date);
-		calendar.add(calendar.DATE,day);
+		calendar.add(Calendar.DATE,day);
 		return calendar.getTime();
 	}
 
+	public static String getFirstDayOfMonth(Date date,String format){
+		Calendar calendar = new GregorianCalendar();
+		calendar.set(Calendar.YEAR,DateUtil.getYear(date));
+		calendar.set(Calendar.MONTH,DateUtil.getMonth(date) - 1);
+		calendar.set(Calendar.DAY_OF_MONTH,calendar.getMinimum(Calendar.DATE));;
+		String first = new SimpleDateFormat(format).format(calendar.getTime());
+
+		return first;
+	}
+
+	public static String getLastDayOfMonth(Date date,String format){
+		Calendar calendar = new GregorianCalendar();
+		calendar.set(Calendar.YEAR,DateUtil.getYear(date));
+		calendar.set(Calendar.MONTH,DateUtil.getMonth(date) - 1);
+		calendar.set(Calendar.DAY_OF_MONTH,calendar.getMaximum(Calendar.DATE));;
+		String last = new SimpleDateFormat(format).format(calendar.getTime());
+
+		return last;
+	}
+
+	public static Integer getYear(Date date){
+		Calendar calendar = new GregorianCalendar();
+		calendar.setTime(date);
+		return calendar.get(Calendar.YEAR);
+	}
+
+	public static Integer getMonth(Date date){
+		Calendar calendar = new GregorianCalendar();
+		calendar.setTime(date);
+		return calendar.get(Calendar.MONTH) + 1;
+	}
+
+	public static Integer getDay(Date date){
+		Calendar calendar = new GregorianCalendar();
+		calendar.setTime(date);
+		return calendar.get(Calendar.DATE);
+	}
+
+	public static String getWeekOfDate(Date date) {
+		String[] weekDays = {"星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"};
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		int w = cal.get(Calendar.DAY_OF_WEEK) - 1;
+		if (w < 0){ w = 0;}
+
+		return weekDays[w];
+	}
+
+
 
 //	public static void main(String[] args){
-//	    System.out.println(DateUtils.getDateBetween(DateUtils.string2Date("2015-09-24", DateUtils.DEFAULT_DATE_FORMAT), DateUtils.string2Date("2015-09-25", DateUtils.DEFAULT_DATE_FORMAT)));
+////		System.out.println(getLastDayOfMonth(new Date(),DateUtil.DEFAULT_DATETIME_FORMAT));
+//
+//		System.out.println(DateUtil.date2String(new Date(),"dd日"));
 //	}
 }
