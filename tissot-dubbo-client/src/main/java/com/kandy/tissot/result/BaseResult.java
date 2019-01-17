@@ -12,6 +12,7 @@ public class BaseResult<T> implements Serializable {
     private int code = 200;
     private String message;
     private T data;
+    private int pageSize;
 
     public BaseResult(){
         super();
@@ -55,6 +56,14 @@ public class BaseResult<T> implements Serializable {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
     }
 
     @Override
