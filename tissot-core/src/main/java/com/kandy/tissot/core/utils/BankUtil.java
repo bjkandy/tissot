@@ -11,7 +11,6 @@ public class BankUtil {
         System.out.println(name);
     }
 
-
     //传入卡号 得到银行名称
     public static String getNameOfBank(String idCard) {
         int index = -1;
@@ -169,7 +168,6 @@ public class BankUtil {
             "622895", "623125", "622947", "621561", "623095", "621073", "623109", "621361", "623033", "623207", "622891", "621363",
             "623189", "623510", "622995", "621053", "621230", "621229", "622218", "628267", "621392", "621481", "621310", "621396",
             "623251", "628351" };
-
 
     //"发卡行.卡种名称",
     private static final String[] bankName = {

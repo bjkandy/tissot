@@ -15,7 +15,7 @@ public class AddressUtil {
      *
      * @param content
      *            请求的参数 格式为：name=xxx&pwd=xxx
-     * @param encoding
+     * @param encodingString
      *            服务器端请求编码。如GBK,UTF-8等
      * @return
      * @throws UnsupportedEncodingException
@@ -28,7 +28,6 @@ public class AddressUtil {
         String returnStr = this.getResult(urlStr, content, encodingString);
         if (returnStr != null) {
             // 处理返回的省市区信息
-            //System.out.println(returnStr);
             String[] temp = returnStr.split(",");
             if(temp.length<3){
                 return "0";//无效IP，局域网测试
@@ -204,7 +203,7 @@ public class AddressUtil {
 
     public static void main(String[] args) throws UnknownHostException {
         AddressUtil addressUtils = new AddressUtil();
-        String ip = "192.168.23.3";
+        String ip = "114.255.155.34";
         String address = "";
         try {
             address = addressUtils.getAddresses("ip="+ip, "utf-8");

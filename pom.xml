@@ -27,7 +27,7 @@
     <module>tissot-dubbo</module>
     <module>tissot-dubbo-client</module>
     <module>tissot-dubbo-service</module>
-      <module>tissot-dal</module>
+    <module>tissot-dal</module>
   </modules>
 
   <properties>

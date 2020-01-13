@@ -11,13 +11,12 @@ import java.util.Properties;
 /**
  * 获取application.properties 文件的信息，在工程中可以直接使用<key,value>的方式
  */
-public class ZeusPropertyPlaceholderConfigurer extends PropertyPlaceholderConfigurer {
+public class TissotPropertyPlaceholderConfigurer extends PropertyPlaceholderConfigurer {
 
     private static Map<String, Object> ctxPropertiesMap;
 
     @Override
-    protected void processProperties(ConfigurableListableBeanFactory beanFactoryToProcess, Properties props)
-                                                                                                            throws BeansException {
+    protected void processProperties(ConfigurableListableBeanFactory beanFactoryToProcess, Properties props) throws BeansException {
         super.processProperties(beanFactoryToProcess, props);
         ctxPropertiesMap = new HashMap<String, Object>();
         for (Object key : props.keySet()) {
