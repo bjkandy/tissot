@@ -65,7 +65,7 @@ public class DateUtil {
 	 */
 	public static String date2String(Date date){
 		if (null != date) {
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			return sdf.format(date);
 		} else {
 			return null;
@@ -101,6 +101,20 @@ public class DateUtil {
 		Calendar c = Calendar.getInstance();
 		c.setTime(now);
 		c.set(Calendar.DATE, c.get(Calendar.DATE) - day);
+		return c.getTime();
+	}
+
+	/**
+	 * 获得前几N的时间
+	 * @param now
+	 * @param value
+	 * @param field Calendar.DATE
+	 * @return
+	 */
+	public static Date getDateBefore(Date now, int value,int field) {
+		Calendar c = Calendar.getInstance();
+		c.setTime(now);
+		c.set(field, c.get(field) - value);
 		return c.getTime();
 	}
 
@@ -206,12 +220,13 @@ public class DateUtil {
 	public static Date getDateAfter(Date date,Integer day){
 		Calendar calendar = new GregorianCalendar();
 		calendar.setTime(date);
-		calendar.add(calendar.DATE,day);
+		calendar.add(Calendar.DATE,day);
 		return calendar.getTime();
 	}
 
+	public static void main(String[] args){
+		Date date = DateUtil.string2Date("99991231","yyyyMMdd");
 
-//	public static void main(String[] args){
-//	    System.out.println(DateUtils.getDateBetween(DateUtils.string2Date("2015-09-24", DateUtils.DEFAULT_DATE_FORMAT), DateUtils.string2Date("2015-09-25", DateUtils.DEFAULT_DATE_FORMAT)));
-//	}
+		System.out.println(DateUtil.date2String(date,"yyyy-MM-dd"));
+	}
 }

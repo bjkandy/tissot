@@ -1,6 +1,6 @@
 package com.kandy.tissot.core.utils;
 
-import com.kandy.tissot.core.constant.ErrorCodeEnum;
+import com.kandy.tissot.core.enums.ErrorCodeEnum;
 import com.kandy.tissot.core.exception.ServiceException;
 import org.springframework.util.Assert;
 import org.springframework.util.CollectionUtils;

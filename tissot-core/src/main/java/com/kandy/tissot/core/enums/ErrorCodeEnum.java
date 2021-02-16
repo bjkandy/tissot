@@ -1,4 +1,4 @@
-package com.kandy.tissot.core.constant;
+package com.kandy.tissot.core.enums;
 
 /**
  * 系统错误码
@@ -16,6 +16,7 @@ public enum ErrorCodeEnum {
     参数丢失(710,"参数丢失."),
     参数不为空(722,"参数不为空."),
     非法参数(720,"参数非法");
+
     private int code;
     private String message;
 
@@ -53,4 +54,3 @@ public enum ErrorCodeEnum {
         return false;
     }
 }
-

@@ -4,6 +4,7 @@ package com.kandy.tissot.core.utils.validate;
  * Created by bjkandy on 2016/1/19.
  */
 public class BankCardValidator {
+
     /**
      * 校验银行卡卡号
      * @param cardId
@@ -16,6 +17,7 @@ public class BankCardValidator {
         }
         return cardId.charAt(cardId.length() - 1) == bit;
     }
+
     /**
      * 从不含校验位的银行卡卡号采用 Luhm 校验算法获得校验位
      * @param nonCheckCodeCardId

@@ -1,6 +1,6 @@
 package com.kandy.tissot.core.validator;
 
-import com.kandy.tissot.core.constant.ErrorCodeEnum;
+import com.kandy.tissot.core.enums.ErrorCodeEnum;
 import com.kandy.tissot.core.exception.ServiceException;
 import org.apache.commons.lang.StringUtils;
 

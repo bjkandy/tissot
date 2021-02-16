@@ -5,15 +5,31 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * 字符串脱敏工具类
  * Created by bjkandy on 2016/1/22.
  */
 public class StringHiddenUtil {
     private static Logger logger = LoggerFactory.getLogger(StringHiddenUtil.class);
 
+    /**
+     * 按字符串下标脱敏
+     * @param source    源字符串
+     * @param begin     开始下标
+     * @param end       结束下标
+     * @return
+     */
     public static String getHiddenString(String source,Integer begin,Integer end){
         return StringHiddenUtil.getHiddenString(source, begin, end, '*');
     }
 
+    /**
+     * 按字符串下标脱敏
+     * @param source    源字符串
+     * @param begin     开始下标
+     * @param end       结束下标
+     * @param hidden    脱敏显示符
+     * @return
+     */
     public static String getHiddenString(String source,Integer begin,Integer end,char hidden){
         if (!StringUtils.isEmpty(source)){
             if (!(begin >= 0 && begin <=source.length())){
@@ -34,6 +50,13 @@ public class StringHiddenUtil {
         return null;
     }
 
+    /**
+     * 按字符串前后位脱敏
+     * @param source    源字符串
+     * @param begin     前几位
+     * @param end       后几位
+     * @return
+     */
     public static String getHiddenStringByDisplay(String source,Integer begin,Integer end){
         return StringHiddenUtil.getHiddenStringByDisplay(source, begin, end, '*');
     }
@@ -58,7 +81,7 @@ public class StringHiddenUtil {
         return null;
     }
 
-//    public static void main(String[] args){
-//        System.out.println(StringHiddenUtil.getHiddenStringByDisplay("6215590200002266807",6,4,'*'));
-//    }
+    public static void main(String[] args){
+        System.out.println(StringHiddenUtil.getHiddenStringByDisplay("6215590200002266807",3,5));
+    }
 }

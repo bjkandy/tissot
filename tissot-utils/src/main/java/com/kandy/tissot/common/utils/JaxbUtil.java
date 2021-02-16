@@ -14,7 +14,7 @@ import java.io.StringWriter;
  * @author bjkandy
  * @create 2013-3-29 下午2:40:14
  */
-public class JaxbUtils {
+public class JaxbUtil {
 
     /**
      * JavaBean转换成xml 默认编码UTF-8

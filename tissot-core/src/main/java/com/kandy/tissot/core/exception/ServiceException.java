@@ -1,6 +1,6 @@
 package com.kandy.tissot.core.exception;
 
-import com.kandy.tissot.core.constant.ErrorCodeEnum;
+import com.kandy.tissot.core.enums.ErrorCodeEnum;
 
 /**
  * Created by bjkandy on 2015/12/30.

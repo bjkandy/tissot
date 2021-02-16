@@ -1,6 +1,6 @@
 package com.kandy.tissot.core.result;
 
-import com.kandy.tissot.core.constant.ErrorCodeEnum;
+import com.kandy.tissot.core.enums.ErrorCodeEnum;
 
 import java.io.Serializable;
 

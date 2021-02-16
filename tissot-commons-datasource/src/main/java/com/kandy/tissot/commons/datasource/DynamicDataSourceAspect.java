@@ -11,10 +11,8 @@ import org.springframework.stereotype.Component;
 
 /**
  * 切换数据源Advice
- * 
+ *
  * @Order(-10): 保证该AOP在@Transactional之前执行
- * 
- * Created by zhaoxinguo on 2016年12月5日
  */
 @Aspect
 @Order(-10)
@@ -50,5 +48,4 @@ public class DynamicDataSourceAspect {
        //方法执行完毕之后，销毁当前数据源信息，进行垃圾回收。
        DynamicDataSourceContextHolder.clearDataSourceType();
     }
-	
 }

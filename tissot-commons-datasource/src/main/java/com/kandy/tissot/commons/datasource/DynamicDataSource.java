@@ -4,7 +4,6 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 /**
  * 动态数据源
- * Created by zhaoxinguo on 2016年12月5日
  */
 public class DynamicDataSource extends AbstractRoutingDataSource {
 

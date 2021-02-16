@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 public class IdcardValidator {
 
     private IdcardValidator(){}
+
     /**
      * 省，直辖市代码表： { 11:"北京",12:"天津",13:"河北",14:"山西",15:"内蒙古",
      * 21:"辽宁",22:"吉林",23:"黑龙江",31:"上海",32:"江苏",
@@ -48,8 +49,7 @@ public class IdcardValidator {
 
     // 第18位校检码
     @SuppressWarnings("unused")
-    private static String verifyCode[] = { "1", "0", "X", "9", "8", "7", "6", "5",
-            "4", "3", "2" };
+    private static String verifyCode[] = { "1", "0", "X", "9", "8", "7", "6", "5", "4", "3", "2" };
 
     /**
      * 验证所有的身份证的合法性
@@ -336,7 +336,6 @@ public class IdcardValidator {
      * @return
      */
     public static int getPowerSum(int[] bit) {
-
         int sum = 0;
 
         if (power.length != bit.length) {
@@ -356,7 +355,6 @@ public class IdcardValidator {
     /**
      * 将和值与11取模得到余数进行校验码判断
      *
-     * @param checkCode
      * @param sum17
      * @return 校验位
      */
@@ -415,6 +413,7 @@ public class IdcardValidator {
         }
         return a;
     }
+
 //
 //	public static void main(String[] args) throws Exception {
 //
@@ -436,4 +435,3 @@ public class IdcardValidator {
 //
 //	}
 }
-

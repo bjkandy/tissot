@@ -11,6 +11,7 @@ import java.net.UnknownHostException;
  * Created by kandy on 18/10/18.
  */
 public class AddressUtil {
+
     /**
      *
      * @param content
@@ -26,10 +27,11 @@ public class AddressUtil {
         String urlStr = "http://ip.taobao.com/service/getIpInfo.php";
         // 从http://whois.pconline.com.cn取得IP所在的省市区信息
         String returnStr = this.getResult(urlStr, content, encodingString);
+        System.out.println(returnStr);
         if (returnStr != null) {
             // 处理返回的省市区信息
             String[] temp = returnStr.split(",");
-            if(temp.length<3){
+            if(temp.length < 3){
                 return "0";//无效IP，局域网测试
             }
             String region = (temp[5].split(":"))[1].replaceAll("\"", "");
@@ -73,6 +75,7 @@ public class AddressUtil {
         }
         return null;
     }
+
     /**
      * @param urlStr
      *            请求的地址
@@ -119,6 +122,7 @@ public class AddressUtil {
         }
         return null;
     }
+
     /**
      * unicode 转换成 中文
      *
@@ -168,8 +172,7 @@ public class AddressUtil {
                                 value = (value << 4) + 10 + aChar - 'A';
                                 break;
                             default:
-                                throw new IllegalArgumentException(
-                                        "Malformed      encoding.");
+                                throw new IllegalArgumentException("Malformed encoding.");
                         }
                     }
                     outBuffer.append((char) value);
