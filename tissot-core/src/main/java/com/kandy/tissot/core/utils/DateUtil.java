@@ -224,9 +224,51 @@ public class DateUtil {
 		return calendar.getTime();
 	}
 
-	public static void main(String[] args){
-		Date date = DateUtil.string2Date("99991231","yyyyMMdd");
+	public static String getFirstDayOfMonth(Date date,String format){
+		Calendar calendar = new GregorianCalendar();
+		calendar.set(Calendar.YEAR,DateUtil.getYear(date));
+		calendar.set(Calendar.MONTH,DateUtil.getMonth(date) - 1);
+		calendar.set(Calendar.DAY_OF_MONTH,calendar.getMinimum(Calendar.DATE));;
+		String first = new SimpleDateFormat(format).format(calendar.getTime());
 
-		System.out.println(DateUtil.date2String(date,"yyyy-MM-dd"));
+		return first;
+	}
+
+	public static String getLastDayOfMonth(Date date,String format){
+		Calendar calendar = new GregorianCalendar();
+		calendar.set(Calendar.YEAR,DateUtil.getYear(date));
+		calendar.set(Calendar.MONTH,DateUtil.getMonth(date) - 1);
+		calendar.set(Calendar.DAY_OF_MONTH,calendar.getMaximum(Calendar.DATE));;
+		String last = new SimpleDateFormat(format).format(calendar.getTime());
+
+		return last;
+	}
+
+	public static Integer getYear(Date date){
+		Calendar calendar = new GregorianCalendar();
+		calendar.setTime(date);
+		return calendar.get(Calendar.YEAR);
+	}
+
+	public static Integer getMonth(Date date){
+		Calendar calendar = new GregorianCalendar();
+		calendar.setTime(date);
+		return calendar.get(Calendar.MONTH) + 1;
+	}
+
+	public static Integer getDay(Date date){
+		Calendar calendar = new GregorianCalendar();
+		calendar.setTime(date);
+		return calendar.get(Calendar.DATE);
+	}
+
+	public static String getWeekOfDate(Date date) {
+		String[] weekDays = {"星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"};
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		int w = cal.get(Calendar.DAY_OF_WEEK) - 1;
+		if (w < 0){ w = 0;}
+
+		return weekDays[w];
 	}
 }
