@@ -40,6 +40,12 @@ public abstract class AssertUtil extends Assert {
         }
     }
 
+    public static void notNull(Object object, Integer code,String message) {
+        if (object == null) {
+            throw new ServiceException(code,message);
+        }
+    }
+
     public static void notNull(Object object) {
         notNull(object, "[Assertion failed] - this argument is required; it must not be null");
     }
