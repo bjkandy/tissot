@@ -9,9 +9,9 @@ import java.util.List;
  */
 public interface BaseMapper<T extends Serializable, ID extends Serializable> {
 
-    long insert(T entity);
+    Integer insert(T entity);
 
-    int update(T entity);
+    Integer update(T entity);
 
     T findOne(ID id);
 
@@ -19,5 +19,5 @@ public interface BaseMapper<T extends Serializable, ID extends Serializable> {
 
     List<T> findList(T entity);
 
-    long count();
+    Long count();
 }

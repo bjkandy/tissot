@@ -11,8 +11,8 @@ public abstract class BaseParam implements Serializable {
 
     private Long              id;
     private Long              version          = 200L;
-    private Date              createDate;
-    private Date              updateDate;
+    private Date              createTime;
+    private Date              updateTime;
 
     private Integer           offset;
     private Integer           size;
@@ -33,20 +33,20 @@ public abstract class BaseParam implements Serializable {
         this.version = version;
     }
 
-    public Date getCreateDate() {
-        return createDate;
+    public Date getcreateTime() {
+        return createTime;
     }
 
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setcreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getUpdateDate() {
-        return updateDate;
+    public Date getupdateTime() {
+        return updateTime;
     }
 
-    public void setUpdateDate(Date updateDate) {
-        this.updateDate = updateDate;
+    public void setupdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 
     public Integer getOffset() {

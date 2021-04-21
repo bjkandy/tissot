@@ -9,6 +9,10 @@ import java.util.Random;
 public class RandomUtil {
     final static Random random = new Random();
 
+    public static Integer getRandom3(){
+        return random.nextInt(900) + 100;
+    }
+
     public static Integer getRandom4(){
         return random.nextInt(9000) + 1000;
     }

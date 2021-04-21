@@ -26,6 +26,10 @@ public class ServiceException extends RuntimeException {
         super(message,cause);
     }
 
+    public ServiceException(Throwable cause){
+        super(cause);
+    }
+
     public Integer getCode() {
         return code;
     }
